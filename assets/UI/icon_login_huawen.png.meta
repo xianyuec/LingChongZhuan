@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "a7eed61a-0fbc-4f96-8bd4-bdaa3a53621e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "icon_login_huawen": {
+      "ver": "1.0.3",
+      "uuid": "279f0f9f-cd6e-4b88-8e43-e41939e1764f",
+      "rawTextureUuid": "a7eed61a-0fbc-4f96-8bd4-bdaa3a53621e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": -1,
+      "trimX": 21,
+      "trimY": 22,
+      "width": 520,
+      "height": 144,
+      "rawWidth": 564,
+      "rawHeight": 186,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
