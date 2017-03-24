@@ -5,7 +5,8 @@ cc.Class({
         audio: {
             url: cc.AudioClip,
             default: null
-        }
+        },
+        mainNode: cc.Node,
     },
 
     onLoad: function () {
@@ -14,5 +15,9 @@ cc.Class({
 
     onDestroy: function () {
         cc.audioEngine.stop(this.current);
-    }
+    },
+    
+    onClickStart: function () {
+        this.mainNode.active = true;
+    },
 });
