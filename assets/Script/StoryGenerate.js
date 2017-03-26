@@ -7,7 +7,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        this.test();
+        // this.test();
     },
     
     test: function () {
@@ -106,8 +106,8 @@ cc.Class({
                         heatDead = true;
                     }
                     res.push({type: "attack", s: id, t: heroId, damage: damage});
-                    res.push({type: "injured", id: heroId});
                     heroData.nowHP -= damage;
+                    res.push({type: "injured", id: heroId, nowHP: heroData.nowHP, totHP: heroData.totHP});
                     if (heatDead) {
                         res.push({type: "dead", id: enemyId});
                         playerList[heroId] = null;
@@ -147,12 +147,7 @@ cc.Class({
             res.push({type: "end", exp: 0});
         }
         
-        
-        
-        
-        for (var i = 0; i < res.length; i ++) {
-            cc.log("test: " + JSON.stringify(res[i]));
-        }
+        return res;
     },
 
     // called every frame, uncomment this function to activate update callback
