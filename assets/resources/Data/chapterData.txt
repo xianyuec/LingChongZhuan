@@ -1,12 +1,122 @@
 {
 	"training": {
-		"start": [{"name": "linchong", "content": "在这里锻炼可以增加经验"}],
+		"start": [{"name": "linchong", "content": "在这里锻炼可以增加大量经验"}],
+		"win": [{"name": "wushi", "content": "恭喜你获得胜利"}],
+		"lose": [{"name": "wushi", "content": "真不幸你失败了"}],
+		"players": [
+			null, "LinChong", null, null, null, null,
+			null, "WuShi", null, null, null, null
+		],
+		"exp":300
+	},
+	"1": {
+		"start": [{"name": "dipi", "content": "大师好武功啊，这么轻易举起了一棵大树！"},
+				{"name": "luzhisheng", "content": "这都是小意思"},
+				{"name": "linchong", "content": "好功夫！"},
+				{"name": "luzhisheng", "content": "怎的，你想切磋一下？"},
+				{"name": "linchong", "content": "请~"}
+				],
+		"win": [{"name": "luzhisheng", "content": "好功夫！你叫什么名字"},
+				{"name": "linchong", "content": "在下林冲"},
+				{"name": "liumang", "content": "原来是那八十万禁军教头"},
+				{"name": "luzhisheng", "content": "你功夫不错，去喝个酒怎么样"},
+				{"name": "linchong", "content": "既然如此，那在下……"},
+				{"name": "yahuan", "content": "老爷，不好了，不好了，夫人她……"},
+				{"name": "linchong", "content": "夫人她怎的？"},
+				{"name": "yahuan", "content": "夫人她上香的时候被一个流氓缠住了"},
+				{"name": "linchong", "content": "兄台不好意思，家内有事，改日再登门拜访"}],			
+		"lose": [{"name": "luzhisheng", "content": "我赢了哈哈哈哈哈哈哈……"},
+				{"name": "luzhisheng", "content": "功夫不错！你叫什么名字"},
+				{"name": "linchong", "content": "在下林冲"},
+				{"name": "liumang", "content": "原来是那八十万禁军教头"},
+				{"name": "luzhisheng", "content": "你功夫不错，去喝个酒怎么样"},
+				{"name": "linchong", "content": "既然如此，那在下……"},
+				{"name": "yahuan", "content": "老爷，不好了，不好了，夫人她……"},
+				{"name": "linchong", "content": "夫人她怎的？"},
+				{"name": "yahuan", "content": "夫人她上香的时候被一个流氓缠住了"},
+				{"name": "linchong", "content": "兄台不好意思，家内有事，改日再登门拜访"}],
+		"players": [
+			null, "LinChong", null,  null, null, null,
+			null, "LuZhiSheng", null,  null, null, null
+		],
+		"exp":100
+	},
+	"2": {
+		"start": [{"name": "linchong", "content": "小厮竟敢辱我妻子！"},
+				{"name": "gaoyanei", "content": "哟哟哟哟，我好怕啊~"},
+				{"name": "gaoyanei", "content": "给我上！"},
+				{"name": "wushi", "content": "是！"},
+				{"name": "linchong", "content": "放马过来"}],
 		"win": [{"name": "linchong", "content": "获胜了"}],
 		"lose": [{"name": "linchong", "content": "失败了"}],
 		"players": [
-			"LinChong", "LuZhiSheng", "DongChao", "HeroDemo", "HeroDemo", "HeroDemo",
-			"HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo"
+			null, "LinChong", null, null, null, null,
+			"WuShi", "WuShi", "WuShi", "WuShi", "GaoYaNei", "WuShi"
 		],
-		"exp":10
+		"exp":300
+	},
+	"3": {
+		"start": [{"name": "linchong", "content": "小哥麻烦您通告高太尉一声我林冲到了"},
+			{"name": "fujiang", "content": "好的，你稍等一下"},
+			{"name": "gaoqiu", "content": "大胆林冲，竟敢带刀擅闯白虎堂"},
+			{"name": "gaoqiu", "content": "来人啊，抓住林冲"},
+			{"name": "linchong", "content": "高俅，你竟然阴我，跟你拼了"}],
+			
+		"win": [{"name": "gaoqiu", "content": "你竟然赢了，这关作者是设计的故意不让你赢的"}],
+		"lose": [{"name": "gaoqiu", "content": "把林冲绑了，听候发落"}],
+		"players": [
+			null, "LinChong", null, null, null, null,
+			"JiaoTou", "JiaoTou", "JiaoTou", "JiaoTou", "GaoQiu", "JiaoTou"
+		],
+		"exp":10000
+	},
+	"4": {
+		"start": [{"name": "dongchao", "content": "野猪林到了"},
+					{"name": "xuebao", "content": "官人，休要怪我们"},
+					{"name": "dongchao", "content": "要怪就怪陆大官人"},
+					{"name": "dongchao", "content": "是他只是我们在野猪林加害于你的"},
+					{"name": "linchong", "content": "难道我林冲今日尽要命丧于此"},
+					{"name": "luzhisheng", "content": "大胆狗贼，竟敢加害我兄弟，纳命来！"}
+				],
+		"win": [{"name": "luzhisheng", "content": "兄弟，跟我上梁山吧"},
+					{"name": "linchong", "content": "不了，谢谢哥哥"},
+					{"name": "luzhisheng", "content": "你们两个，背着我弟弟走！"},
+					{"name": "dongchao", "content": "是"},
+					{"name": "xuebao", "content": "是"}],
+		"lose": [{"name": "luzhisheng", "content": "弟弟没有救成，哥哥我没脸见人了"}],
+		"players": [
+			null, "LuZhiSheng", null,null,null,null,
+			"DongChao", "XueBao", null,null,null,null
+		],
+		"exp":500
+	},
+	"5": {
+		"start": [{"name": "caijin", "content": "蔡进早就听说林教头棍法举世无双"},
+				{"name": "tuanlian", "content": "在我看来，不过是雕虫小技"},
+				{"name": "caijin", "content": "两位官人，可否脱下林大官人的锁链，让他们两人比试一下"},
+				{"name": "dongchao", "content": "这~"},
+				{"name": "caijin", "content": "蔡进我定有百两黄金相赠"},
+				{"name": "dongchao", "content": "好吧"}],
+		"win": [{"name": "tuanlian", "content": "我输了"},
+					{"name": "linchong", "content": "承让承让"}],
+		"lose": [{"name": "tuanlian", "content": "八十万禁军教头，也不过如此嘛哈哈哈哈哈哈哈"}],
+		"players": [
+			null, "LinChong", null, null, null, null, 
+			null, "TuanLian", null, null, null, null
+		],
+		"exp":800
+	},
+	"6": {
+		"start": [{"name": "linchong", "content": "陆谦，我好心带你，视你为兄弟"},
+				{"name": "linchong", "content": "你为何恩将仇报，苦苦相逼"},
+				{"name": "luqian", "content": "人为财死，鸟为食亡！大家给我上"}],
+		"win": [{"name": "linchong", "content": "这一枪刺下去，你我恩断义绝"},
+				{"name": "luqian", "content": "额~"}],
+		"lose": [{"name": "linchong", "content": "我林冲心有不甘啊"}],
+		"players": [
+			null, "LinChong", null, null, null, null, 
+			"PianJiang", "PianJiang", "PianJiang", "PianJiang", "LuQian", "PianJiang"
+		],
+		"exp":1000
 	}
 }

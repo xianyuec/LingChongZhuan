@@ -35,4 +35,24 @@ cc.Class({
     onClickTraining: function () {
         this.goToChapter("training");
     },
+
+    onClick_1: function () {
+        this.goToChapter("1");
+    },
+    onClick_2: function () {
+        this.goToChapter("2");
+    },
+    onClick_3: function () {
+        this.goToChapter("3");
+    },
+    onClick_4: function () {
+        this.goToChapter("4");
+    },
+    onClick_5: function () {
+        this.goToChapter("5");
+    },
+    onClick_6: function () {
+        this.goToChapter("6");
+    },
+
 });

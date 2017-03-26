@@ -168,6 +168,10 @@ cc.Class({
         }
     },
 
+    closeExpPanel: function () {
+        this.expPanel.active = false;
+    },
+
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         if (this.tellStoryIdx != null && this.storyData != null && this.tellStoryIdx < this.storyData.length) {

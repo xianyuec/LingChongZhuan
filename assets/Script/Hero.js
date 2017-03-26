@@ -7,7 +7,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        
+        this.bloodBar.width = this.bloodBar.node.getChildByName("bar").width = this.node.width;
     },
     
     updateShowBloodRate: function (rate) {
