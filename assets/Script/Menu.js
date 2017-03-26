@@ -11,6 +11,11 @@ cc.Class({
 
     onLoad: function () {
         this.current = cc.audioEngine.play(this.audio, true, 0.5);
+        
+        if (cc.sys.localStorage.getItem("LCLevel") == null) {
+            cc.sys.localStorage.setItem("LCLevel", 1);
+            cc.sys.localStorage.setItem("LCExp", 0);
+        }
     },
 
     onDestroy: function () {

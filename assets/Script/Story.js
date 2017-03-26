@@ -33,6 +33,8 @@ cc.Class({
                 cc.loader.loadRes("Data/playerData.txt", (err, text2)=>{
                     if (!err) {
                         var playerData = JSON.parse(text2);
+                        var lcLevel = cc.sys.localStorage.getItem("LCLevel");
+                        playerData["LinChong"] = {attack: 10*lcLevel, blood: 100*lcLevel+200*Math.floor(lcLevel/5)+500*Math.floor(lcLevel/10), apeed: 5*lcLevel};
                         this.startStory(chapterData, playerData);
                     }
                     else {
@@ -106,19 +108,12 @@ cc.Class({
             }, 1);
         }
         else if (content.type == "attack") {
-            cc.log("pia qia 0 : " + JSON.stringify(content));
             var sIdx = content.s;
             var tIdx = content.t;
             var damage = content.damage;
 
-            cc.log("pia qia 0.1 : s = " + sIdx + ", t = " + tIdx + " , damage = " + damage);
-
             this.topZIndex += 10;
             this.players[sIdx].zIndex = this.topZIndex;
-
-            cc.log("pia qia : hello");
-
-            cc.log("pia qia 0.5 : " + this.players[sIdx] + " , " + this.players[tIdx]);
 
             // this.scheduleOnce(()=>{
                 var pos1 = this.players[sIdx].getPosition();
@@ -126,22 +121,18 @@ cc.Class({
                 var pos3 = cc.p(pos2.x, pos2.y+50);
                 if (sIdx < 6) 
                     pos3 = cc.p(pos2.x, pos2.y-50);
-                cc.log("pia qia pa pos: " + pos1 + " , " + pos2 + " , " + pos3);
                 var moveTo1 = cc.moveTo(0.5, pos3);
                 var moveTo2 = cc.moveTo(0.2, pos2);
                 var moveTo3 = cc.moveTo(0.2, pos3);
                 var moveTo4 = cc.moveTo(0.5, pos1);
                 this.tellStoryIdx ++;
-                cc.log("pia qia pa -- 1");
                 var callFunc = cc.callFunc(()=>{
                     // this.tellStoryIdx ++;
                     // this.tellStory();
                     this.canTellStory = true;
-                    cc.log("pia qia pa -- 3");
                 });
                 var stop = cc.moveBy(0.2, cc.p(0, 0));
                 this.players[sIdx].runAction(cc.sequence(moveTo1, stop, moveTo2, moveTo3, stop, moveTo4, callFunc));
-                cc.log("pia qia pa -- 2");
                 // }, 10);
         }
         else if (content.type == "injured") {
@@ -181,7 +172,6 @@ cc.Class({
     update: function (dt) {
         if (this.tellStoryIdx != null && this.storyData != null && this.tellStoryIdx < this.storyData.length) {
             if (this.canTellStory) {
-                cc.log("pia: story = " + JSON.stringify(this.storyData[this.tellStoryIdx]));
                 this.tellStory();
             }
         }
