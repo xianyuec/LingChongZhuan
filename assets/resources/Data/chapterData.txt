@@ -4,8 +4,8 @@
 		"win": [{"name": "linchong", "content": "获胜了"}],
 		"lose": [{"name": "linchong", "content": "失败了"}],
 		"players": [  
-			null, "HeroDemo", null, null, null, null,
-			null, "HeroDemo", null, null, null, null       
+			"HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo",
+			"HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo"       
 		],
 		"exp":10
 	}

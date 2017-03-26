@@ -1,3 +1,3 @@
 {
-	"HeroDemo": {"attack": 10, "blood": 100, "speed": 1}
+	"HeroDemo": {"attack": 60, "blood": 100, "speed": 1}
 }

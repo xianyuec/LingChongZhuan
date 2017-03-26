@@ -67,24 +67,27 @@ cc.Class({
             for (var i = 0; i < list.length; i ++) {
                 var id = list[i].id;
                 if (id < 6) {   // hero attack enemy
+                    if (aliveHeroIdList.indexOf(id) == -1) {
+                        continue;
+                    }
                     var enemyId = aliveEnemyIdList[Math.floor(Math.random() * aliveEnemyIdList.length)];
                     var enemyData = playerList[enemyId];
-                    var damage = Math.floor(playerList[id].attack * (0.8 + 0.3 * Math.random()));
+                    var damage = Math.floor(playerList[enemyId].attack * (0.8 + 0.3 * Math.random()));
                     var heatDead = false;
                     if (damage > enemyData.nowHP) {
                         damage = enemyData.nowHP;
                         heatDead = true;
                     }
                     res.push({type: "attack", s: id, t: enemyId, damage: damage});
-                    res.push({type: "injured", id: enemyId});
                     enemyData.nowHP -= damage;
+                    res.push({type: "injured", id: enemyId, nowHP: enemyData.nowHP, totHP: enemyData.totHP});
                     if (heatDead) {
                         res.push({type: "dead", id: enemyId});
                         playerList[enemyId] = null;
                         var newList = [];
-                        aliveEnemyIdList.forEach((id)=>{
-                            if (id != enemyId)
-                                newList.push(id);
+                        aliveEnemyIdList.forEach((_id)=>{
+                            if (_id != enemyId)
+                                newList.push(_id);
                         });
                         aliveEnemyIdList = newList;
                         if (aliveEnemyIdList.length <= 0) {
@@ -97,9 +100,12 @@ cc.Class({
                     }
                 }
                 else {          // enemy attack hero
+                    if (aliveEnemyIdList.indexOf(id) == -1) {
+                        continue;
+                    }
                     var heroId = aliveHeroIdList[Math.floor(Math.random() * aliveHeroIdList.length)];
                     var heroData = playerList[heroId];
-                    var damage = Math.floor(playerList[id].attack * (0.8 + 0.3 * Math.random()));
+                    var damage = Math.floor(playerList[heroId].attack * (0.8 + 0.3 * Math.random()));
                     var heatDead = false;
                     if (damage > heroData.nowHP) {
                         damage = heroData.nowHP;
@@ -109,12 +115,12 @@ cc.Class({
                     heroData.nowHP -= damage;
                     res.push({type: "injured", id: heroId, nowHP: heroData.nowHP, totHP: heroData.totHP});
                     if (heatDead) {
-                        res.push({type: "dead", id: enemyId});
+                        res.push({type: "dead", id: heroId});
                         playerList[heroId] = null;
                         var newList = [];
-                        aliveHeroIdList.forEach((id)=>{
-                            if (id != heroId)
-                                newList.push(id);
+                        aliveHeroIdList.forEach((_id)=>{
+                            if (_id != heroId)
+                                newList.push(_id);
                         });
                         aliveHeroIdList = newList;
                         if (aliveHeroIdList.length <= 0) {
