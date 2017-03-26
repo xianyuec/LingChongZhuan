@@ -7,6 +7,7 @@ cc.Class({
             default: null
         },
         mainNode: cc.Node,
+        storyNode: cc.Node,
     },
 
     onLoad: function () {
@@ -24,5 +25,14 @@ cc.Class({
     
     onClickStart: function () {
         this.mainNode.active = true;
+    },
+
+    goToChapter: function (chapter) {
+        this.storyNode.active = true;
+        this.storyNode.getComponent("Story").init(chapter);
+    },
+
+    onClickTraining: function () {
+        this.goToChapter("training");
     },
 });

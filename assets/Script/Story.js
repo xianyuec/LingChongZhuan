@@ -14,7 +14,7 @@ cc.Class({
         this.storyGenerator = new (require("StoryGenerate"));
         
         // test
-        this.init("training");
+        // this.init("training");
     },
 
     onClickEnd: function () {
