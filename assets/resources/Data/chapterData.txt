@@ -3,9 +3,9 @@
 		"start": [{"name": "linchong", "content": "在这里锻炼可以增加经验"}],
 		"win": [{"name": "linchong", "content": "获胜了"}],
 		"lose": [{"name": "linchong", "content": "失败了"}],
-		"players": [  
-			"HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo",
-			"HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo"       
+		"players": [
+			"LinChong", "LuZhiSheng", "DongChao", "HeroDemo", "HeroDemo", "HeroDemo",
+			"HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo", "HeroDemo"
 		],
 		"exp":10
 	}

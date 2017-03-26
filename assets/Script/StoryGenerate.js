@@ -7,32 +7,14 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        // this.test();
-    },
-    
-    test: function () {
-        var chapterData = {
-            start: [{name: "linchong", content: "start"}],
-            win: [{name: "linchong", content: "win"}],
-            lose: [{name: "linchong", content: "lose"}],
-            players: [  
-                null, "HeroDemo", null, null, null, null,
-                null, "HeroDemo", null, null, null, null,                
-            ],
-            exp: 100,
-        };
-        var playerData = {
-            HeroDemo: {attack: 10, blood: 100, speed: 1},
-        };
         
-        this.calculateStory(chapterData, playerData);
     },
     
     calculateStory: function (chapterData, playerData) {
         var res = [];
         for (var i = 0; i < chapterData.start.length; i ++) {
-            var data = chapterData.start[i];
-            res.push({type: "talk", name: data.name, content: data.content});
+            var _data = chapterData.start[i];
+            res.push({type: "talk", name: _data.name, content: _data.content});
         }
         var speedList = [];
         var aliveHeroIdList = [];
@@ -44,19 +26,17 @@ cc.Class({
                 playerList.push(null);
                 continue;
             }
-            else {
-                var data = playerData[player];
-                playerList.push({
-                    attack: data.attack,
-                    totHP: data.blood,
-                    nowHP: data.blood,
-                });
-            }
-            speedList.push({id: i, speed: player.speed});
+            var data = playerData[player];
+            playerList.push({
+                attack: data.attack,
+                totHP: data.blood,
+                nowHP: data.blood,
+            });
+            speedList.push({id: i, speed: data.speed});
             if (i < 6) aliveHeroIdList.push(i);
             else aliveEnemyIdList.push(i);
         }
-        speedList.sort((a, b)=>{ return b.speed - a.speed; });
+        speedList = speedList.sort((a, b)=>{ return b.speed - a.speed; });
         // if fight more than 30 loops , then lose
         var fightResult = 0;    // 1: win; -1: lose
         for (var fightTime = 0; fightTime < 30; fightTime ++) {
@@ -72,7 +52,7 @@ cc.Class({
                     }
                     var enemyId = aliveEnemyIdList[Math.floor(Math.random() * aliveEnemyIdList.length)];
                     var enemyData = playerList[enemyId];
-                    var damage = Math.floor(playerList[enemyId].attack * (0.8 + 0.3 * Math.random()));
+                    var damage = Math.floor(playerList[id].attack * (0.8 + 0.3 * Math.random()));
                     var heatDead = false;
                     if (damage > enemyData.nowHP) {
                         damage = enemyData.nowHP;
@@ -105,7 +85,7 @@ cc.Class({
                     }
                     var heroId = aliveHeroIdList[Math.floor(Math.random() * aliveHeroIdList.length)];
                     var heroData = playerList[heroId];
-                    var damage = Math.floor(playerList[heroId].attack * (0.8 + 0.3 * Math.random()));
+                    var damage = Math.floor(playerList[id].attack * (0.8 + 0.3 * Math.random()));
                     var heatDead = false;
                     if (damage > heroData.nowHP) {
                         damage = heroData.nowHP;

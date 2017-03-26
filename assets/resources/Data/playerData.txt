@@ -1,3 +1,6 @@
 {
-	"HeroDemo": {"attack": 60, "blood": 100, "speed": 1}
+	"HeroDemo": {"attack": 60, "blood": 100, "speed": 1},
+	"LuZhiSheng": {"attack": 100, "blood": 1000, "speed": 50},
+	"DongChao": {"attack": 10, "blood": 100, "speed": 5},
+	"z": {"attack": 10, "blood": 50, "speed": 5}
 }
