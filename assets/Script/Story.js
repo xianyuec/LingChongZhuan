@@ -114,7 +114,7 @@ cc.Class({
             cc.log("pia qia 0.1 : s = " + sIdx + ", t = " + tIdx + " , damage = " + damage);
 
             this.topZIndex += 10;
-            this.players[sIdx].zIndx = this.topZIndex;
+            this.players[sIdx].zIndex = this.topZIndex;
 
             cc.log("pia qia : hello");
 
