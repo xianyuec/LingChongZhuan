@@ -3627,7 +3627,7 @@
     "_tag": -1,
     "_opacityModifyRGB": false,
     "_id": "67cf3yB00hCRYOTfhhhNkX1",
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 158
@@ -3705,7 +3705,7 @@
       "__id__": 96
     },
     "_enabled": true,
-    "isAlignOnce": true,
+    "isAlignOnce": false,
     "_target": null,
     "_alignFlags": 45,
     "_left": 0,
@@ -3732,7 +3732,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "d5aee9ed-f4cd-4970-b927-c03b7434b6b4"
+      "__uuid__": "aef0fe36-2027-4824-8035-23439c8097b2"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -6037,6 +6037,9 @@
     },
     "expPanel": {
       "__id__": 139
+    },
+    "background": {
+      "__id__": 96
     }
   },
   {

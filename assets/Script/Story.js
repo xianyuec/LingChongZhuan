@@ -6,6 +6,7 @@ cc.Class({
         putPlace: cc.Node,
         chatPlace: cc.Node,
         expPanel: cc.Node,
+        background: cc.Node,
     },
 
     // use this for initialization
@@ -56,9 +57,20 @@ cc.Class({
     },
 
     startStory: function (chapterData, playerData) {
-        this.chapacterData = chapterData;
+        this.chapterData = chapterData;
         this.playerData = playerData;
         this.storyData = this.storyGenerator.calculateStory(chapterData, playerData);
+
+        var bgPath = "bg/" + this.chapterData.bg;
+        cc.loader.loadRes(bgPath, cc.SpriteFrame, (err, spriteFrame)=>{
+            if (err) {
+                cc.error(err);
+                return;
+            }
+            var sprite = this.background.getComponent(cc.Sprite);
+            sprite.spriteFrame = spriteFrame;
+        });
+
         this.playerFinishNum = 0;
         this.topZIndex = 1;
         for (var i = 0; i < 12; i ++) {

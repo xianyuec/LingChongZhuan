@@ -1,5 +1,6 @@
 {
 	"training": {
+		"bg": "5",
 		"start": [{"name": "linchong", "content": "在这里锻炼可以增加大量经验"}],
 		"win": [{"name": "wushi", "content": "恭喜你获得胜利"}],
 		"lose": [{"name": "wushi", "content": "真不幸你失败了"}],
@@ -10,6 +11,7 @@
 		"exp":300
 	},
 	"1": {
+		"bg": "1_2",
 		"start": [{"name": "dipi", "content": "大师好武功啊，这么轻易举起了一棵大树！"},
 				{"name": "luzhisheng", "content": "这都是小意思"},
 				{"name": "linchong", "content": "好功夫！"},
@@ -42,6 +44,7 @@
 		"exp":100
 	},
 	"2": {
+		"bg": "1_2",
 		"start": [{"name": "linchong", "content": "小厮竟敢辱我妻子！"},
 				{"name": "gaoyanei", "content": "哟哟哟哟，我好怕啊~"},
 				{"name": "gaoyanei", "content": "给我上！"},
@@ -56,6 +59,7 @@
 		"exp":300
 	},
 	"3": {
+		"bg": "3",
 		"start": [{"name": "linchong", "content": "小哥麻烦您通告高太尉一声我林冲到了"},
 			{"name": "fujiang", "content": "好的，你稍等一下"},
 			{"name": "gaoqiu", "content": "大胆林冲，竟敢带刀擅闯白虎堂"},
@@ -71,6 +75,7 @@
 		"exp":10000
 	},
 	"4": {
+		"bg": "4",
 		"start": [{"name": "dongchao", "content": "野猪林到了"},
 					{"name": "xuebao", "content": "官人，休要怪我们"},
 					{"name": "dongchao", "content": "要怪就怪陆大官人"},
@@ -91,6 +96,7 @@
 		"exp":500
 	},
 	"5": {
+		"bg": "5",
 		"start": [{"name": "chaijin", "content": "蔡进早就听说林教头棍法举世无双"},
 				{"name": "tuanlian", "content": "在我看来，不过是雕虫小技"},
 				{"name": "chaijin", "content": "两位官人，可否脱下林大官人的锁链，让他们两人比试一下"},
@@ -107,6 +113,7 @@
 		"exp":800
 	},
 	"6": {
+		"bg": "6",
 		"start": [{"name": "linchong", "content": "陆谦，我好心带你，视你为兄弟"},
 				{"name": "linchong", "content": "你为何恩将仇报，苦苦相逼"},
 				{"name": "luqian", "content": "人为财死，鸟为食亡！大家给我上"}],
