@@ -11,7 +11,7 @@ cc.Class({
     },
     
     updateShowBloodRate: function (rate) {
-        this.bloodBar.progress = rate;
+        this.bloodBar.node.getChildByName("bar").width = Math.floor(this.node.width * rate);
     },
 
     dead: function() {
