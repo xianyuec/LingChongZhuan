@@ -7,6 +7,14 @@ cc.Class({
         chatPlace: cc.Node,
         expPanel: cc.Node,
         background: cc.Node,
+        audio1: {
+            url: cc.AudioClip,
+            default: null
+        },
+        audio2: {
+            url: cc.AudioClip,
+            default: null
+        },
     },
 
     // use this for initialization
@@ -71,6 +79,10 @@ cc.Class({
             sprite.spriteFrame = spriteFrame;
         });
 
+        var bgm = this.chapterData.bgm;
+        var audio = ((bgm == "Story") ? this.audio1 : this.audio2);
+        this.audioID = cc.audioEngine.play(audio, true, 0.5);
+
         this.playerFinishNum = 0;
         this.topZIndex = 1;
         for (var i = 0; i < 12; i ++) {
@@ -120,13 +132,13 @@ cc.Class({
         if (content.type == "talk") {
             this.chatPlace.active = true;
             this.chatPlace.getComponent("ChatPlace").loadChat(content.name, content.content);
-            this.tellStoryIdx ++;
-            this.scheduleOnce(()=>{
-                this.chatPlace.active = false;
-                // this.tellStoryIdx ++;
-                // this.tellStory();
-                this.canTellStory = true;
-            }, 1);
+            // this.tellStoryIdx ++;
+            // this.scheduleOnce(()=>{
+            //     this.chatPlace.active = false;
+            //     // this.tellStoryIdx ++;
+            //     // this.tellStory();
+            //     this.canTellStory = true;
+            // }, 1);                           // 改为鼠标点击
         }
         else if (content.type == "attack") {
             var sIdx = content.s;
@@ -194,7 +206,8 @@ cc.Class({
     },
 
     onEnable: function () {
-
+        cc.audioEngine.stopAll();
+        
     },
 
     onDisable: function () {
@@ -203,6 +216,18 @@ cc.Class({
         this.tellStoryIdx = null;
         this.chapterData = null;
         this.playerData = null;
+        var sprite = this.background.getComponent(cc.Sprite);
+        sprite.spriteFrame = null;
+        cc.audioEngine.stopAll();
+        this.menu.playMusic();
+    },
+
+    onClickNext: function () {
+        if (this.lastClickTime == null || Date.now() - this.lastClickTime > 500) {
+            this.chatPlace.active = false;
+            this.tellStoryIdx ++;
+            this.canTellStory = true;
+        }
     },
 
     // called every frame, uncomment this function to activate update callback

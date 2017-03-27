@@ -11,16 +11,21 @@ cc.Class({
     },
 
     onLoad: function () {
-        this.current = cc.audioEngine.play(this.audio, true, 0.5);
+        this.playMusic();
         
         if (cc.sys.localStorage.getItem("LCLevel") == null) {
             cc.sys.localStorage.setItem("LCLevel", 1);
             cc.sys.localStorage.setItem("LCExp", 0);
         }
+        this.storyNode.getComponent("Story").menu = this;
+    },
+
+    playMusic: function () {
+        cc.audioEngine.play(this.audio, true, 0.5);
     },
 
     onDestroy: function () {
-        cc.audioEngine.stop(this.current);
+        cc.audioEngine.stopAll();
     },
     
     onClickStart: function () {
