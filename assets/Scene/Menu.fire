@@ -6108,6 +6108,9 @@
     },
     "audio2": {
       "__uuid__": "dd595d33-ae1b-4a15-8a14-2778c5a4e9eb"
+    },
+    "attackAudio": {
+      "__uuid__": "1dfb7e01-dc6d-4a98-b996-4fde638ab7ee"
     }
   },
   {

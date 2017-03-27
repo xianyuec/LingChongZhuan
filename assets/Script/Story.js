@@ -15,6 +15,10 @@ cc.Class({
             url: cc.AudioClip,
             default: null
         },
+        attackAudio: {
+            url: cc.AudioClip,
+            default: null
+        },
     },
 
     // use this for initialization
@@ -148,25 +152,28 @@ cc.Class({
             this.topZIndex += 10;
             this.players[sIdx].zIndex = this.topZIndex;
 
-            // this.scheduleOnce(()=>{
-                var pos1 = this.players[sIdx].getPosition();
-                var pos2 = this.players[tIdx].getPosition();
-                var pos3 = cc.p(pos2.x, pos2.y+50);
-                if (sIdx < 6) 
-                    pos3 = cc.p(pos2.x, pos2.y-50);
-                var moveTo1 = cc.moveTo(0.5, pos3);
-                var moveTo2 = cc.moveTo(0.2, pos2);
-                var moveTo3 = cc.moveTo(0.2, pos3);
-                var moveTo4 = cc.moveTo(0.5, pos1);
-                this.tellStoryIdx ++;
-                var callFunc = cc.callFunc(()=>{
-                    // this.tellStoryIdx ++;
-                    // this.tellStory();
-                    this.canTellStory = true;
-                });
-                var stop = cc.moveBy(0.2, cc.p(0, 0));
-                this.players[sIdx].runAction(cc.sequence(moveTo1, stop, moveTo2, moveTo3, stop, moveTo4, callFunc));
-                // }, 10);
+            var pos1 = this.players[sIdx].getPosition();
+            var pos2 = this.players[tIdx].getPosition();
+            var pos3 = cc.p(pos2.x, pos2.y+50);
+            if (sIdx < 6) 
+                pos3 = cc.p(pos2.x, pos2.y-50);
+            var moveTo1 = cc.moveTo(0.5, pos3);
+            var moveTo2 = cc.moveTo(0.2, pos2);
+            var moveTo3 = cc.moveTo(0.2, pos3);
+            var moveTo4 = cc.moveTo(0.5, pos1);
+            this.tellStoryIdx ++;
+            var callFunc = cc.callFunc(()=>{
+                // this.tellStoryIdx ++;
+                // this.tellStory();
+                this.canTellStory = true;
+            });
+            var stop = cc.moveBy(0.2, cc.p(0, 0));
+            this.players[sIdx].runAction(cc.sequence(moveTo1, stop, moveTo2, moveTo3, stop, moveTo4, callFunc));
+
+            // 播放音乐
+            this.scheduleOnce(()=>{
+                cc.audioEngine.play(this.attackAudio, false, 0.5);
+            }, 0.5);
         }
         else if (content.type == "injured") {
             var idx = content.id;
@@ -207,7 +214,6 @@ cc.Class({
 
     onEnable: function () {
         cc.audioEngine.stopAll();
-        
     },
 
     onDisable: function () {
