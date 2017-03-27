@@ -34,7 +34,14 @@ cc.Class({
                     if (!err) {
                         var playerData = JSON.parse(text2);
                         var lcLevel = cc.sys.localStorage.getItem("LCLevel");
-                        playerData["LinChong"] = {attack: 10*lcLevel, blood: 100*lcLevel+200*Math.floor(lcLevel/5)+500*Math.floor(lcLevel/10), speed: 5*lcLevel};
+                        playerData["LinChong"] = {
+                                                    attack: 10*lcLevel + 100*Math.floor(lcLevel/10)
+                                                                        + 1000*Math.floor(lcLevel/100),
+                                                    blood: 100*lcLevel + 1000*Math.floor(lcLevel/10)
+                                                                        + 10000*Math.floor(lcLevel/100)
+                                                                        + 1000000*Math.floor(lcLevel/1000),
+                                                    speed: 5*lcLevel
+                                                };
                         this.startStory(chapterData, playerData);
                     }
                     else {
