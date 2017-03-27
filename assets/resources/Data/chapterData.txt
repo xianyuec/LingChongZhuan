@@ -91,11 +91,11 @@
 		"exp":500
 	},
 	"5": {
-		"start": [{"name": "caijin", "content": "蔡进早就听说林教头棍法举世无双"},
+		"start": [{"name": "chaijin", "content": "蔡进早就听说林教头棍法举世无双"},
 				{"name": "tuanlian", "content": "在我看来，不过是雕虫小技"},
-				{"name": "caijin", "content": "两位官人，可否脱下林大官人的锁链，让他们两人比试一下"},
+				{"name": "chaijin", "content": "两位官人，可否脱下林大官人的锁链，让他们两人比试一下"},
 				{"name": "dongchao", "content": "这~"},
-				{"name": "caijin", "content": "蔡进我定有百两黄金相赠"},
+				{"name": "chaijin", "content": "蔡进我定有百两黄金相赠"},
 				{"name": "dongchao", "content": "好吧"}],
 		"win": [{"name": "tuanlian", "content": "我输了"},
 					{"name": "linchong", "content": "承让承让"}],

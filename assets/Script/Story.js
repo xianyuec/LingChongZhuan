@@ -49,6 +49,8 @@ cc.Class({
     },
 
     startStory: function (chapterData, playerData) {
+        this.chapacterData = chapterData;
+        this.playerData = playerData;
         this.storyData = this.storyGenerator.calculateStory(chapterData, playerData);
         this.playerFinishNum = 0;
         this.topZIndex = 1;
@@ -170,6 +172,18 @@ cc.Class({
 
     closeExpPanel: function () {
         this.expPanel.active = false;
+    },
+
+    onEnable: function () {
+
+    },
+
+    onDisable: function () {
+        this.tellStoryIdx = null;
+        this.storyData = null;
+        this.tellStoryIdx = null;
+        this.chapterData = null;
+        this.playerData = null;
     },
 
     // called every frame, uncomment this function to activate update callback
